@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 22:10:29 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:28:08 by jinbekim         ###   ########.fr       */
+/*   Created: 2020/12/22 15:51:26 by jinbekim          #+#    #+#             */
+/*   Updated: 2020/12/22 22:55:30 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void		*memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t	i;
-
+	char	*cst;
+	char	*crc;
+	
+	cst = dst;
+	crc = (char *)src;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while ((i < n) && (s1[i] == s2[i]))
+	while (i < n)
 	{
+		cst[i] = crc[i];
+		if (crc[i] == (unsigned char)c)
+			return (dst + i + 1);
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (0);
 }

@@ -6,11 +6,21 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:10:40 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/21 20:02:06 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/22 22:44:06 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+
+static int	ft_strlen(const char *s)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
 
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

@@ -6,9 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 16:58:53 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/21 23:15:26 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/22 22:32:06 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 size_t		ft_strlen(const char *s)
 {
