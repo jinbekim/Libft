@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:50:12 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 21:13:46 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 19:27:57 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *hay, const char *nee, size_t len);
+char				*ft_strdup(const char *s1);
+
+
 
 #endif
