@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 23:35:24 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:45:14 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 00:43:50 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char 	*s1;
+	char	*s1;
 
 	s1 = s;
 	i = 0;

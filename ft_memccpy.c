@@ -6,13 +6,13 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:51:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:55:30 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 00:07:15 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void		*memccpy(void *dst, const void *src, int c, size_t n)
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t	i;
 	char	*cst;

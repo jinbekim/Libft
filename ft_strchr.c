@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 20:37:13 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:54:02 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 02:59:12 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char		*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == c)
+		return ((char *)&s[i]);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 16:11:34 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:30:26 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 00:20:32 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char	*s1;
 	size_t		i;
+	const char *s1;
 
-	s1 = s;
 	i = 0;
+	s1 = s;
 	while (i < n)
 	{
 		if (s1[i] == (unsigned char)c)

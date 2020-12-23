@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 20:54:12 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:53:43 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 03:46:56 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	ft_strlen(const char *s)
 
 char		*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	int	i;
 
-	i = ft_strlen(s);
+	i = (int)ft_strlen(s);
 	while (i >= 0)
 	{
 		if (s[i] == c)

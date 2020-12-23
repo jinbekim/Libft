@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 20:02:16 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:44:27 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 14:44:57 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,19 @@ static int	ft_strlen(const char *s)
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dstlen;
+	size_t	srclen;
 	size_t	i;
 
 	i = 0;
+	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
 	if (dstlen >= dstsize)
-		return (ft_strlen(src) + dstsize);
+		return (srclen + dstsize);
 	while ((dstsize > dstlen + i + 1) && src[i])
 	{
 		dst[dstlen + i] = src[i];
 		i++;
 	}
 	dst[dstlen + i] = '\0';
-	return (dstlen + i);
+	return (dstlen + srclen);
 }
