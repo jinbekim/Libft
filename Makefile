@@ -6,14 +6,14 @@
 #    By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/22 22:21:38 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/23 19:52:17 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-AR = ar rcsu
+AR = ar rcs
 
 PART1 = ft_atoi \
 	ft_isalpha \
@@ -37,7 +37,7 @@ PART1 = ft_atoi \
 	ft_strlen \
 	ft_strlcpy \
 	ft_strlcat \
-#	ft_calloc \
+	ft_calloc \
 	ft_strdup
 #PART2 = ft_strjoin \
 	ft_strtrim \

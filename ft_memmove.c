@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:43:40 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/23 14:37:52 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/23 19:51:39 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	char	*cst;
-	char	*crc;
+	size_t		i;
+	char		*cst;
+	const char	*crc;
 
 	cst = dst;
 	crc = (const char *)src;
