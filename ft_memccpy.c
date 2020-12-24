@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:51:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/24 17:22:58 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/24 18:16:22 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t	i;
 	char	*cst;
 	char	*crc;
-	
+
 	cst = dst;
 	crc = (char *)src;
 	i = 0;
