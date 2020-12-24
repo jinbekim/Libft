@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:51:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/23 00:07:15 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/24 17:22:58 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	cst = dst;
 	crc = (char *)src;
 	i = 0;
-	while (i < n)
+	while (i < n && crc[i])
 	{
 		cst[i] = crc[i];
 		if (crc[i] == (unsigned char)c)

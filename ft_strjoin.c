@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/23 16:09:01 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/23 20:37:06 by jinbekim         ###   ########.fr       */
+/*   Created: 2020/12/23 21:45:21 by jinbekim          #+#    #+#             */
+/*   Updated: 2020/12/23 21:52:00 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-static size_t	ft_strlen(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
+		size_t	len1;
+		size_t	len2;
+		size_t	i;
+		char	*arr;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	size_t	len;
-	char	*c1;
-	
-	len = ft_strlen(s1);
-	c1 = (char *)malloc(sizeof(char) * (len + 1));
-	len = 0;
-	while (s1[len])
-	{
-		c1[len] = s1[len];
-		len++;
-	}
-	c1[len] = 0;
-	return (c1);
+		len1 = ft_strlen(s1);
+		len2 = ft_strlen(s2);
+		i = 0;
+		if (!(arr = malloc(len1 + len2 +1)))
+				return (0);
+		while (s1[i])
+		{
+			arr[i] = s1[i];
+			i++;
+		}
+		i = 0;
+		while (s2[i])
+		{
+			arr[len1 + i] = s2[i];
+			i++;
+		}
+		arr[len1 + i] = 0;
+		return (arr);
 }

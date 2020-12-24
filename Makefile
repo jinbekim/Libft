@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/23 19:52:17 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/24 17:22:12 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,15 +39,17 @@ PART1 = ft_atoi \
 	ft_strlcat \
 	ft_calloc \
 	ft_strdup
-#PART2 = ft_strjoin \
+
+PART2 = ft_strjoin \
 	ft_strtrim \
 	ft_split \
-	ft_itoa \
+#	ft_itoa \
 	ft_strmapi \
 	ft_putchar_fb \
 	ft_putstr_fb \
 	ft_putendl_fb \
 	ft_putnbr_fb
+
 #BONUS = ft_lstnew \
 	ft_listadd_front \
 	ft_lstsize \

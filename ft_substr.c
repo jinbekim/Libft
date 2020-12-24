@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/23 16:09:01 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/23 20:37:06 by jinbekim         ###   ########.fr       */
+/*   Created: 2020/12/23 20:48:51 by jinbekim          #+#    #+#             */
+/*   Updated: 2020/12/23 21:45:06 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-static size_t	ft_strlen(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
+		char	*arr;
+		size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	size_t	len;
-	char	*c1;
-	
-	len = ft_strlen(s1);
-	c1 = (char *)malloc(sizeof(char) * (len + 1));
-	len = 0;
-	while (s1[len])
-	{
-		c1[len] = s1[len];
-		len++;
-	}
-	c1[len] = 0;
-	return (c1);
+		i = 0;
+		if (ft_strlen(s) <= start)
+			return (ft_strdup(""));
+		if (!(arr = malloc(len + 1)))
+			return (0);
+		while ((i < len) &&  s[i + start])
+		{
+				arr[i] = s[i + start];
+				i++;
+		}
+		arr[i] = 0;
+		return (arr);
 }
