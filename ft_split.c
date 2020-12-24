@@ -6,97 +6,91 @@
 /*   By: jinbekim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 23:02:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/24 18:04:05 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/24 20:59:38 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static size_t	ft_count(char const *s, char c)
+static size_t	ft_count(char **split, char const *s, char c)
 {
-		size_t	i;
-		size_t	count;
-		int		token;
+	size_t		i;
+	size_t		count;
+	int			token;
 
-		token = 0;
-		i = 0;
-		count = 0;
-		while (s[i])
+	token = 0;
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			token = 0;
+		else if (token == 0)
 		{
-			if (s[i] == c)
-			{	
-				token = 0;
-				i++;
-			}
-			else if (token == 0)
-			{
-				count++;
-				token = 1;
-				i++;
-			}
-			else
-				i++;
+			count++;
+			token = 1;
 		}
-		return (count);
+		i++;
+	}
+	if (!(split = malloc(sizeof(char *) * count)))
+		return (0);
+	return (count);
 }
 
-static int		ft_split_len(char **split, char const *s, char c, size_t count)
+int				ft_str_count(char **split, char const *s, char c)
 {
-		size_t	i;
-		size_t	j;
-		size_t	len;
+	size_t		j;
+	size_t		strlen;
 
-		j = 0;
-		i = 0;
-		while (j < count)
+	j = 0;
+	while (*s)
+	{
+		strlen = 0;
+		while (*s == c)
+			s++;
+		while (*s != c && *s != 0)
 		{
-			len = 0;
-			while (s[i] == c)
-				i++;
-			while (s[i] != c)
+			strlen++;
+			s++;
+		}
+		if (!(split[j] = malloc(strlen + 1)))
+		{
+			while (j > 0)
 			{
-				i++;
-				len++;
+				j--;
+				free(split[j]);
 			}
-			if (!(split[j] = malloc(len + 1)))
-			{
-				while (j > 0)
-				{
-					j--;
-					free(split[j]);
-				}
-				return (0);
-			}
+			return (0);
+		}
+		j++;
+	}
+}
+
+char			**ft_split(char const *s, char c)
+{
+	size_t		count;
+	size_t		i;
+	size_t		j;
+	char		**split;
+
+	i = 0;
+	if (!(count = ft_count(split, s, c)))
+		return (0);
+	if (!(ft_str_count(split, s, c)))
+		return (0);
+	while (i < count)
+	{
+		j = 0;
+		while (*s == c)
+			s++;
+		while (*s != c && *s != 0)
+		{
+			split[i][j] = *s++;
 			j++;
 		}
-		return (1);
-}
-
-char	**ft_split(char const *s, char c)
-{
-		size_t	count;
-		size_t	i;
-		char	**split;
-		char hi[1];
-		hi[0] = c;
-		i = 0;
-		s = ft_strtrim(s, hi);
-		if (!(count = ft_count(s, c)))
-			return (0);
-		if (!(split = malloc(sizeof(char *) * count)))
-			return (0);
-		if (!(ft_split_len(split, s, c, count)))
-		{
-			free(split);
-			return (0);
-		}
-		while (i < count)
-		{
-			s = ft_memccpy(split[i], s, c, 1000000);
-			while (*s != c)
-				s++;
-			i++;
-		}
-		return (split);
+		split[i][j] = 0;
+		i++;
+	}
+	return (split);
 }
