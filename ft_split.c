@@ -6,12 +6,12 @@
 /*   By: jinbekim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 23:02:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/24 20:59:38 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/25 14:11:18 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
-#include "libft.h"
 
 static size_t	ft_count(char **split, char const *s, char c)
 {
@@ -33,8 +33,9 @@ static size_t	ft_count(char **split, char const *s, char c)
 		}
 		i++;
 	}
-	if (!(split = malloc(sizeof(char *) * count)))
+	if (!(split = (char **)malloc(sizeof(char *) * (count + 1))))
 		return (0);
+	split[count] = 0;
 	return (count);
 }
 
@@ -54,17 +55,17 @@ int				ft_str_count(char **split, char const *s, char c)
 			strlen++;
 			s++;
 		}
-		if (!(split[j] = malloc(strlen + 1)))
+		if (strlen == 0)
+			break ;
+		if (!(split[j] = (char *)malloc(sizeof(char) * (strlen + 1))))
 		{
 			while (j > 0)
-			{
-				j--;
-				free(split[j]);
-			}
+				free(split[j--]);
 			return (0);
 		}
 		j++;
 	}
+	return (1);
 }
 
 char			**ft_split(char const *s, char c)
@@ -86,7 +87,8 @@ char			**ft_split(char const *s, char c)
 			s++;
 		while (*s != c && *s != 0)
 		{
-			split[i][j] = *s++;
+			split[i][j] = *s;
+			s++;
 			j++;
 		}
 		split[i][j] = 0;
