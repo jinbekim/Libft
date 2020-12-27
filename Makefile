@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+         #
+#    By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/24 18:09:46 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/27 13:54:50 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,15 +43,16 @@ PART1 = ft_atoi \
 PART2 = ft_strjoin \
 	ft_strtrim \
 	ft_split \
-#	ft_itoa \
+	ft_itoa \
 	ft_strmapi \
-	ft_putchar_fb \
-	ft_putstr_fb \
-	ft_putendl_fb \
-	ft_putnbr_fb
+	ft_putchar_fd \
+	ft_putstr_fd \
+	ft_putendl_fd \
+	ft_putnbr_fd \
+	ft_substr
 
-#BONUS = ft_lstnew \
-	ft_listadd_front \
+BONUS = ft_lstnew \
+	ft_lstadd_front \
 	ft_lstsize \
 	ft_lstlast \
 	ft_lstadd_back \
@@ -66,12 +67,12 @@ SRC1 = $(OBJ1:.o=.c)
 OBJ2 = $(addsuffix .o, $(PART2))
 SRC2 = $(OBJ2:.o=.c)
 
-#OBJB = $(addsuffix .o, $(BONUS))
-#SRCB = $(OBJB:.o=.c)
+OBJB = $(addsuffix .o, $(BONUS))
+SRCB = $(OBJB:.o=.c)
 
 all : $(NAME)
 
-$(NAME) : $(OBJ1) $(OBJ2)
+$(NAME) : $(OBJ1) $(OBJ2) $(OBJB)
 	$(AR) $@ $^
 
 $(OBJ1) : $(SRC1)
@@ -80,11 +81,11 @@ $(OBJ1) : $(SRC1)
 $(OBJ2) : $(SRC2)
 	$(CC) $(CFALGS) -c $^
 
-#$(OBJB) : $(SRCB)
-#	CC CFALGS -c $^
+$(OBJB) : $(SRCB)
+	$(CC) $(CFALGS) -c $^
 
-#bonus : $(OBJB)
-#	AR $(NAME) $^
+bonus : $(OBJB)
+	$(AR) $(NAME) $^
 
 clean :
 	rm -f $(OBJ1) $(OBJ2) $(OBJB)
