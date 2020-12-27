@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jinbekim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 21:45:21 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/24 18:44:24 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:22:26 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -20,9 +19,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	char	*arr;
 
+	i = 0;
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	i = 0;
 	if (!(arr = malloc(len1 + len2 + 1)))
 		return (0);
 	while (s1[i])

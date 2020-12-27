@@ -6,11 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 19:56:20 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/25 20:31:08 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:31:29 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void		ft_putchar_fd(char c, int fd)
 {

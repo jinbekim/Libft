@@ -6,11 +6,10 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 17:48:27 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/25 20:48:33 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:19:17 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))

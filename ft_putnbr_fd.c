@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 20:08:04 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/27 18:47:24 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 02:16:57 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void			ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		tmp = (unsigned int)n * -1;
+		ft_putchar_fd('-', fd);
 		ft_recursive(tmp, fd);
 	}
 	else if (n >= 0)

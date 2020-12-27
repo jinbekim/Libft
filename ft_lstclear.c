@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 22:11:22 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/25 22:19:51 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/27 23:47:03 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	tmp = *lst;
-	while (tmp->next)
+	tmp2 = *lst;
+	while (tmp2)
 	{
-		tmp2 = tmp->next;
-		ft_lstdelone(tmp, del);
 		tmp = tmp2;
+		tmp2 = tmp2->next;
+		ft_lstdelone(tmp, del);
 	}
-	lst = NULL;
+	*lst = NULL;
 }

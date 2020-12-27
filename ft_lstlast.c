@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 21:44:53 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/26 04:13:02 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/27 23:32:04 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 t_list		*ft_lstlast(t_list *lst)
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp->next)
+	while (lst->next)
 	{
-		tmp = tmp->next;
+		lst = lst->next;
 	}
-	return (tmp);
+	return (lst);
 }

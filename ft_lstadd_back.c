@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 21:47:48 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/27 21:17:59 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/27 23:35:16 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list **last;
-
-	(*last) = ft_lstlast(*lst);
-	(*last)->next = new;
+	if (lst)
+	{
+		if (*lst == NULL)
+		{
+			*lst = new;
+		}
+		else
+		{
+			ft_lstlast(*lst)->next = new;
+		}
+	}
 }

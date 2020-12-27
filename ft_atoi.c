@@ -3,25 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 22:35:34 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:27:20 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 02:20:52 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 static	int	ft_isspace(int c)
 {
 	if ((9 <= c && c <= 13) || c == 32)
-		return (1);
-	return (0);
-}
-
-static	int	ft_isdigit(int c)
-{
-	if ('0' <= c && c <= '9')
 		return (1);
 	return (0);
 }

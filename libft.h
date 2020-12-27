@@ -6,14 +6,17 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:50:12 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/27 22:45:09 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:31:18 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <string.h>
 
 typedef struct		s_list
 {

@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jinbekim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 23:02:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/25 15:47:24 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:30:11 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static size_t	ft_count(char const *s, char c)
@@ -36,7 +35,7 @@ static size_t	ft_count(char const *s, char c)
 	return (count);
 }
 
-int				ft_str_count(char **split, char const *s, char c)
+int				ft_make_str(char **split, char const *s, char c)
 {
 	size_t		j;
 	size_t		strlen;
@@ -77,7 +76,7 @@ char			**ft_split(char const *s, char c)
 	if (!(split = (char **)malloc(sizeof(char *) * (count + 1))))
 		return (0);
 	split[count] = 0;
-	if (!(ft_str_count(split, s, c)))
+	if (!(ft_make_str(split, s, c)))
 		return (0);
 	while (i < count)
 	{

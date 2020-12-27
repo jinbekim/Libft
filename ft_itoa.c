@@ -6,77 +6,53 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 15:58:58 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/25 17:46:45 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 02:28:33 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static int			ft_digit_count(long long n)
+static	char	*ft_itoa_core(int n, int len, int token)
 {
-	long long		digit;
-	int				i;
+	char *arr;
 
-	i = 0;
-	digit = 1;
-	while (n >= digit)
-	{
-		digit *= 10;
-		i += 1;
-	}
-	return (i);
-}
-
-static char			*ft_itoa_core(int token, unsigned int n)
-{
-	int				i;
-	char			*ans;
-
-	i = ft_digit_count(n);
-	if (token == 1)
-	{
-		if (!(ans = (char *)malloc(sizeof(char) * (i + 1))))
-			return (0);
-	}
+	if (!(arr = malloc(len + 1)))
+		return (0);
+	arr[len] = 0;
 	if (token == -1)
-	{
-		i += 1;
-		if (!(ans = (char *)malloc(sizeof(char) * (i + 1))))
-			return (0);
-	}
-	ans[i] = 0;
+		arr[0] = '-';
 	while (n)
 	{
-		i--;
-		ans[i] = (n % 10) + '0';
-		n = n / 10;
+		len--;
+		arr[len] = n % 10 + '0';
+		n /= 10;
 	}
-	return (ans);
+	return (arr);
 }
 
-char				*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char			*answer;
-	unsigned int	tmp;
+	int			tmp;
+	int			token;
+	int			len;
 
+	len = 0;
+	token = 1;
 	if (n == 0)
+		return (ft_strdup("0"));
+	else if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	else if (n < 0)
 	{
-		if (!(answer = malloc(2)))
-			return (0);
-		answer[0] = '0';
-		answer[1] = 0;
-		return (answer);
+		token = -1;
+		n = -n;
+		len++;
 	}
-	if (n < 0)
+	tmp = n;
+	while (tmp)
 	{
-		tmp = (unsigned int)n * -1;
-		answer = ft_itoa_core(-1, tmp);
-		answer[0] = '-';
-		return (answer);
+		tmp /= 10;
+		len++;
 	}
-	else if (n > 0)
-	{
-		answer = ft_itoa_core(1, n);
-		return (answer);
-	}
+	return (ft_itoa_core(n, len, token));
 }

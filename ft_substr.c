@@ -6,11 +6,10 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 20:48:51 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/27 18:47:52 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:03:48 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
