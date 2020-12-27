@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/27 13:54:50 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/27 18:59:43 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,8 +84,7 @@ $(OBJ2) : $(SRC2)
 $(OBJB) : $(SRCB)
 	$(CC) $(CFALGS) -c $^
 
-bonus : $(OBJB)
-	$(AR) $(NAME) $^
+#bonus :
 
 clean :
 	rm -f $(OBJ1) $(OBJ2) $(OBJB)
