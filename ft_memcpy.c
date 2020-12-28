@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jinbekim <jinbekim@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 23:38:08 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 14:58:09 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 20:34:27 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*cst;
 	char		*crc;
 
+	if (!(dst && src))
+		return (NULL);
 	i = 0;
 	cst = dst;
 	crc = (char *)src;

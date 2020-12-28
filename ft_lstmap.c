@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 22:24:16 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 16:28:12 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 21:03:44 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (0);
 	curr = NULL;
 	head = curr;
-	if (!(lst && f && del))
-		return (0);
 	while (lst)
 	{
-		if (!(curr = ft_lstnew(f(lst->content))))
+		curr = ft_lstnew(f(lst->content));
+		if (!curr)
 		{
 			ft_lstclear(&head, del);
 			return (0);
