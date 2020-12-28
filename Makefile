@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/28 03:03:25 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/28 13:54:18 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,8 @@ $(OBJ2) : $(SRC2)
 
 $(OBJB) : $(SRCB)
 	$(CC) $(CFALGS) -c $^
+
+.PHONY : clean fclean re
 
 clean :
 	rm -f $(OBJ1) $(OBJ2) $(OBJB)

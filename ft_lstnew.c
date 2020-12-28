@@ -6,11 +6,10 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 20:22:03 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/27 19:43:51 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:59:20 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)

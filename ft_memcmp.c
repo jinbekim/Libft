@@ -6,11 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 17:31:59 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/22 22:28:39 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:58:29 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:51:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/24 18:16:22 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:59:07 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
