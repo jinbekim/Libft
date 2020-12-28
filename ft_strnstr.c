@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 20:56:47 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 20:55:00 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 23:03:03 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char		*ft_strnstr(const char *hay, const char *nee, size_t len)
 {
 	size_t	n;
 
+	if (!*hay)
+		return (NULL);
 	if (!(n = ft_strlen(nee)))
 		return ((char *)hay);
 	while (len >= n && *hay)

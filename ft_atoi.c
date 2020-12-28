@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 22:35:34 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 21:00:25 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 22:17:55 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int			ft_atoi(const	char *s)
 	neg = 1;
 	while (ft_isspace(s[i]))
 		i++;
-	if (s[i] == '-' && s[i] == '+')
+	if (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
 			neg = -1;
@@ -38,12 +38,12 @@ int			ft_atoi(const	char *s)
 	}
 	while (ft_isdigit(s[i]))
 	{
-		if (c > 2147483648 && neg < 0)
+		if (c > 0 && neg < 0)
 			return (0);
-		if (c > 2147483647 && neg > 0)
+		if (c < 0 && neg > 0)
 			return (-1);
-		c = (c * 10) + (s[i] - '0');
+		c = (c * 10) + neg * (s[i] - '0');
 		i++;
 	}
-	return (neg * c);
+	return (c);
 }

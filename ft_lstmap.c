@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 22:24:16 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 21:03:44 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 23:15:22 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*curr;
 	t_list	*head;
 
-	if (!(lst && f && del))
+	if (!(lst && f))
 		return (0);
 	curr = NULL;
 	head = curr;

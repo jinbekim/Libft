@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:51:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 20:41:00 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 23:09:18 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char		*cst;
 	const unsigned char	*crc;
 
-	if (!(dst && src))
+	if (!dst && !src)
 		return (NULL);
 	cst = dst;
 	crc = src;
 	i = 0;
-	while (i < n && crc[i])
+	while (i < n)
 	{
 		cst[i] = crc[i];
 		if (crc[i] == (unsigned char)c)
 			return (dst + i + 1);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
