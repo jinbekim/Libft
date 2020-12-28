@@ -6,28 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:43:40 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/24 18:17:07 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:57:43 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t	i;
-	char	*cst;
-	char	*crc;
-
-	i = 0;
-	cst = dst;
-	crc = (char *)src;
-	while (i < n)
-	{
-		cst[i] = crc[i];
-		i++;
-	}
-	return (dst);
-}
+#include "libft.h"
 
 void		*ft_memmove(void *dst, const void *src, size_t len)
 {

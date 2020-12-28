@@ -6,12 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 22:11:22 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/27 23:47:03 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:52:47 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

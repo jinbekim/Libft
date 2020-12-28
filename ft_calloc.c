@@ -6,11 +6,11 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 16:34:12 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/28 02:17:43 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 15:00:22 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void			*ft_calloc(size_t count, size_t size)
 {
