@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/29 17:42:18 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/29 17:53:08 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
-RM = rm -r
 
 FUNC = ft_atoi \
 	ft_isalpha \
@@ -71,12 +70,6 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(AR) $@ $?
-
-#$(OBJS) : $(SRCS)
-#	$(CC) $(CFLAGS) -c $<
-
-#$(OBJB) : $(SRCB)
-#	$(CC) $(CFLAGS) -c $<
 
 .PHONY : clean fclean re bonus
 
