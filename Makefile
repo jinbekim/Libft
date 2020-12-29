@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 18:47:30 by jinbekim          #+#    #+#              #
-#    Updated: 2020/12/28 19:23:12 by jinbekim         ###   ########.fr        #
+#    Updated: 2020/12/29 17:42:18 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
+RM = rm -r
 
-PART1 = ft_atoi \
+FUNC = ft_atoi \
 	ft_isalpha \
 	ft_isprint \
 	ft_toupper \
@@ -38,9 +39,8 @@ PART1 = ft_atoi \
 	ft_strlcpy \
 	ft_strlcat \
 	ft_calloc \
-	ft_strdup
-
-PART2 = ft_strjoin \
+	ft_strdup \
+	ft_strjoin \
 	ft_strtrim \
 	ft_split \
 	ft_itoa \
@@ -51,7 +51,7 @@ PART2 = ft_strjoin \
 	ft_putnbr_fd \
 	ft_substr
 
-BONUS = ft_lstnew \
+FUNCB = ft_lstnew \
 	ft_lstadd_front \
 	ft_lstsize \
 	ft_lstlast \
@@ -61,35 +61,32 @@ BONUS = ft_lstnew \
 	ft_lstiter \
 	ft_lstmap
 
-OBJ1 = $(addsuffix .o, $(PART1))
-SRC1 = $(OBJ1:.o=.c)
+OBJS = $(addsuffix .o, $(FUNC))
+SRCS = $(OBJS:.o=.c)
 
-OBJ2 = $(addsuffix .o, $(PART2))
-SRC2 = $(OBJ2:.o=.c)
-
-OBJB = $(addsuffix .o, $(BONUS))
+OBJB = $(addsuffix .o, $(FUNCB))
 SRCB = $(OBJB:.o=.c)
 
 all : $(NAME)
 
-$(NAME) : $(OBJ1) $(OBJ2) $(OBJB)
-	$(AR) $@ $^
+$(NAME) : $(OBJS)
+	$(AR) $@ $?
 
-$(OBJ1) : $(SRC1)
-	$(CC) $(CFALGS) -c $^
+#$(OBJS) : $(SRCS)
+#	$(CC) $(CFLAGS) -c $<
 
-$(OBJ2) : $(SRC2)
-	$(CC) $(CFALGS) -c $^
+#$(OBJB) : $(SRCB)
+#	$(CC) $(CFLAGS) -c $<
 
-$(OBJB) : $(SRCB)
-	$(CC) $(CFALGS) -c $^
+.PHONY : clean fclean re bonus
 
-.PHONY : clean fclean re
+bonus : $(OBJS) $(OBJB)
+	$(AR) $(NAME) $?
 
 clean :
-	rm -f $(OBJ1) $(OBJ2) $(OBJB)
+	$(RM) $(OBJS) $(OBJB)
 
 fclean : clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re : clean all
