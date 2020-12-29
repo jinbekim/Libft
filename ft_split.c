@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 23:02:26 by jinbekim          #+#    #+#             */
-/*   Updated: 2020/12/29 18:57:25 by jinbekim         ###   ########.fr       */
+/*   Updated: 2020/12/30 02:07:21 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,10 @@ char			**ft_split(char const *s, char c)
 		return (0);
 	split[count] = 0;
 	if (!(ft_make_str(split, s, c)))
+	{
+		free(split);
 		return (0);
+	}
 	while (i < count)
 	{
 		j = 0;
@@ -88,8 +91,4 @@ char			**ft_split(char const *s, char c)
 		split[i++][j] = 0;
 	}
 	return (split);
-}
-int main()
-{
-	printf("%s\n", ft_split("this is string", '\0')[0]);
 }
