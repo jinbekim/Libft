@@ -14,6 +14,9 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
+SRCS_DIR = ./srcs/
+OBJS_DIR = ./objs/
+INCLUDES_DIR = ./includes/
 
 FUNC = ft_atoi \
 	ft_isalpha \
@@ -50,7 +53,7 @@ FUNC = ft_atoi \
 	ft_putnbr_fd \
 	ft_substr
 
-FUNCB = ft_lstnew \
+BONUS_FUNC = ft_lstnew \
 	ft_lstadd_front \
 	ft_lstsize \
 	ft_lstlast \
@@ -60,13 +63,16 @@ FUNCB = ft_lstnew \
 	ft_lstiter \
 	ft_lstmap
 
-OBJS = $(addsuffix .o, $(FUNC))
-SRCS = $(OBJS:.o=.c)
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FUNC)))
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FUNC)))
 
-OBJB = $(addsuffix .o, $(FUNCB))
-SRCB = $(OBJB:.o=.c)
+BONUS_SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BONUS_FUNC)))
+BONUS_OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(BONUS_FUNC)))
 
 all : $(NAME)
+
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c -o $@ $^
 
 $(NAME) : $(OBJS)
 	$(AR) $@ $?
