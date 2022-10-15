@@ -1,14 +1,15 @@
 # Libft
 앞으로 진행할 프로젝트를 위해, 일반적인 함수를 모은 정적 라이브러리 구현.
 
-## 4L
-- **Liked** (좋았던 점)
-  - 기본이 되는 함수들을 직접 구현해 보면서 어떻게 동작하는지 이해할 수 있었다.
-- **Lacked** (아쉬웠던 점)
-  - 커밋 메세지를 주의 깊게 작성하지 못했다.
-  - 성능이나 가독성면을 좀 더 고려할 수 있지 않았을까.
-- **Learned** (배운 점)
-  - 모든 함수는 마법이 아니고, 이해할 수 있는 코드로 되어 있구나.
-- **Longed for** (앞으로 바라는 점)
-  - 항상 커밋 메세지를 신경쓰자
-  - 가독성과 성능을 고려하며 코드를 작성하자
+## *Period*
+  2020.12.20 ~ ~2020.12.30
+
+## *Sumarry*
+C programming can be very tedious when one doesn’t have access to the highly useful<br/>
+standard functions. This project is about understanding the way these functions work,<br/>
+implementing and learning to use them.
+
+## CMD
+```
+$> make
+```
